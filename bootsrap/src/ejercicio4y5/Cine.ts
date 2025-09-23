@@ -5,34 +5,38 @@ export class Cine {
     private _pelicula: string;
     private _horario: string;
 
+    // Sobrecargas de Constructores (firmas)
+    constructor();
+    constructor(pelicula: string);
+    constructor(pelicula: string, horario: string);
 
-    constructor(pelicula: string, horario:string) {
-        this._pelicula = pelicula;
-        this._horario = horario;    
+    // Implementación de Constructor
+    constructor(pelicula?: string, horario?: string) {
+        if (pelicula && horario) {
+            this._pelicula = pelicula;
+            this._horario = horario;
+
+        } else if (pelicula) {
+            this._pelicula = pelicula;
+            this._horario = "Sin definir";
+
+        } else {
+            this._pelicula = "Sin definir";
+            this._horario = "Sin definir";
+        }
     }
 
-    public setPelicula(v : string) {
-            this._pelicula = v;
-    }
+    // Getters y setters
+    get pelicula():string{return this._pelicula;}
+    set pelicula(p:string){this._pelicula = p;}
 
-    public setHorario(v : string){
-        this._horario = v;
-    }
-
-    
-    public getPelicula() : string {
-        return this._pelicula;
-    }
-    
-    public getHorario() : string {
-        return this._horario;
-    }
+    get horario():string{return this._horario;}
+    set horario(h:string){this._horario = h;}
 
 
     public obtenerCartelera(): string {
-
-        return this._pelicula, this._horario;
-
+        //Template literal
+        return `${this._pelicula} - ${this._horario}`;
     }
     
 
