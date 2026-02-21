@@ -1,6 +1,6 @@
 
 
-//Clase abstracta Documento 
+//Clase abstracta Documento Prototipo
 export abstract class Documento {
 
     //Constructor
@@ -17,6 +17,6 @@ export abstract class Documento {
     //Método para editar el contenido del documento
     editar(contentIdo: string): Documento {
         this.contenido = contentIdo;
-        return this; //acá iba la validación  this.validar()
+        return this;
     }
 }

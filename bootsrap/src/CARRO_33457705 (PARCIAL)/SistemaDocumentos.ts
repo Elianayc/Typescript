@@ -8,14 +8,13 @@ export class SistemaDocumentos {
     private versiones: Map<string, Documento[]> = new Map();
 
     //Método para crear documentos
-    crearDocumento(doc: Documento): void { //LO DEBERIA HABER LLAMADO REGISTRAR DOCUMENTO
-
+    crearDocumento(doc: Documento): void {
         //Valida el documento antes de agregarlo
         if (!doc.validar()) throw new Error("Documento no válido");
 
         //Agrega el documento a los activos y crea su historial de versiones
         this.documentosActivos.set(doc.id, doc);
-        this.versiones.set(doc.id, [doc.copiar()]); //PROTOTYPE: GUARDO UNA COPIA CLONADA
+        this.versiones.set(doc.id, [doc.copiar()]);
     }
 
     //Método para editar un documento
@@ -32,7 +31,7 @@ export class SistemaDocumentos {
 
         // Si pasa validación, aplico los cambios y guardo la nueva versión
         doc.editar(nuevoContenido);
-        this.versiones.get(id)!.push(doc.copiar()); //! LE DICE AL COMPILADOR QUE GET(IO) NO DEVOLVERÁ UN UNDEFINED, Si no lo ponías, TypeScript te tiraba error: “puede ser undefined”.
+        this.versiones.get(id)!.push(doc.copiar());
         return true;
     }
 
@@ -49,8 +48,6 @@ export class SistemaDocumentos {
 
     //Método para ver una versión específica de un documento
     verVersion(id: string, nroVersion: number): Documento {
-
-        //Obtengo el historial de versiones
         const historial = this.versiones.get(id);
 
         //Valido que el documento y la versión existan
@@ -70,7 +67,7 @@ export class SistemaDocumentos {
 
         //Devuelvo las últimas 10 versiones como copias
         const resultado: Documento[] = [];
-        const inicio = historial.length > 10 ? historial.length - 10 : 0; //SI HAY MÁS DE 10, EMPIEZO DESDE LA LONGITUD -10, SINO DESDE 0
+        const inicio = historial.length > 10 ? historial.length - 10 : 0;
 
         // Recorro desde el índice hasta el final del historial
         for (let i = inicio; i < historial.length; i++) {
@@ -79,4 +76,5 @@ export class SistemaDocumentos {
         
         return resultado;
     }
+
 }

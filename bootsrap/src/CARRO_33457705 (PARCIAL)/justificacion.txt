@@ -1,0 +1,21 @@
+Análisis Identificación del patrón:
+
+Usé dos patrones: template method, donde documento el patron molde para los distintos tipos de Documentos
+que deberán redefinir los métodos validar y editar, según el tipo de documento que procesen.
+
+También usé prototype cuando guardo las versnes, usando el método copiar().
+Hago con esto una clonación del documento para que si después lo edito no se "rompa" el original.
+
+Justificación de la aplicación de principios S.O.L.I.D.:
+
+Responssabilidad única: cada clase documento tiene la Responsabilidad de gestiuonr su contenido. 
+La clase SistemaDocumentos de gestionr el historial de versiones. 
+
+Abierto Cerrado: agregar tipos de documentos no arruina el codigo de los demás. No necesitamos cambiar SistemaDocumentos
+para manejar nuevos tipos de archivos. 
+
+Liskov: La clase SistemaDocumentos maneja documentos y espera uno,sin iiportar cual.
+
+Inversion de dependencias: SistemaDocumentos no depende de cases concretas, sino de la abtraccion documento.
+
+PD: perdón la redaccion, no tengo más tiempo. 

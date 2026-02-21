@@ -28,7 +28,6 @@ export class DocumentoImagen extends Documento {
     }
 
     copiar(): Documento {
-        
         //Devuelve una nueva instancia de DocumentoImagen con los mismos valores (clonada).
         return new DocumentoImagen(
             this.id, this.nombre, this.contenido, 
