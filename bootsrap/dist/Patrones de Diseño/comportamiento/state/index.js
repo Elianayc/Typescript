@@ -1,0 +1,34 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const puerta_1 = __importDefault(require("./puerta"));
+const puerta1 = new puerta_1.default();
+console.log("Estado inicial: Puerta cerrada");
+console.log("------------------------------");
+console.log("Intentando abrir la puerta:");
+puerta1.abrir();
+console.log("------------------------------");
+console.log("Intentando bloquear la puerta:");
+puerta1.bloquear();
+console.log("------------------------------");
+console.log("Intentando abrir la puerta bloqueada:");
+puerta1.abrir();
+console.log("------------------------------");
+console.log("Desbloqueando la puerta:");
+puerta1.desbloquear();
+console.log("------------------------------");
+console.log("Cerrando la puerta:");
+puerta1.cerrar();
+console.log("------------------------------");
+console.log("Bloqueando la puerta cerrada:");
+puerta1.bloquear();
+console.log("------------------------------");
+console.log("Intentando desbloquear la puerta:");
+puerta1.desbloquear();
+console.log("------------------------------");
+console.log("Abriendo la puerta:");
+puerta1.abrir();
+console.log("------------------------------");
+//# sourceMappingURL=index.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"conSorbete.js","sourceRoot":"","sources":["../../../../src/Patrones de Diseño/estructural/decorator/conSorbete.ts"],"names":[],"mappings":";;;;;AAAA,4EAAoD;AAEpD,MAAqB,UAAW,SAAQ,2BAAiB;IACrD,KAAK;QACD,OAAO,GAAG,KAAK,CAAC,KAAK,EAAE,cAAc,CAAC;IAC1C,CAAC;IACD,MAAM;QACF,OAAO,GAAG,KAAK,CAAC,MAAM,EAAE,cAAc,CAAC;IAC3C,CAAC;CACJ;AAPD,6BAOC"}

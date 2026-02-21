@@ -1,0 +1,1 @@
+{"version":3,"file":"comprimir.js","sourceRoot":"","sources":["../../../../src/Patrones de Diseño/comportamiento/strategy/comprimir.ts"],"names":[],"mappings":";;;;;AAAA,0EAA0C;AAE1C,MAAqB,SAAU,SAAQ,0BAAQ;IAC3C,iBAAiB,CAAC,SAAoB;QAElC,OAAO,CAAC,GAAG,CAAC,oCAAoC,GAAG,SAAS,CAAC,SAAS,EAAE,GAAG,eAAe,GAAG,SAAS,CAAC,YAAY,EAAE,CAAC,CAAC;IAE3H,CAAC;CAEJ;AAPD,4BAOC"}

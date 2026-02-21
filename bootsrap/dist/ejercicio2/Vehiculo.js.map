@@ -1,0 +1,1 @@
+{"version":3,"file":"Vehiculo.js","sourceRoot":"","sources":["../../src/ejercicio2/Vehiculo.ts"],"names":[],"mappings":";AAEA,MAAM,QAAQ;IAEH,KAAK,CAAS;IACd,MAAM,CAAS;IACd,OAAO,CAAS;IAExB,YAAY,KAAa,EAAE,MAAa,EAAE,OAAe;QACrD,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;QACnB,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;QACrB,IAAI,CAAC,OAAO,GAAG,OAAO,CAAC;IAC3B,CAAC;CAEJ"}

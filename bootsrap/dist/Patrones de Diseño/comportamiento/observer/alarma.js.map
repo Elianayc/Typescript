@@ -1,0 +1,1 @@
+{"version":3,"file":"alarma.js","sourceRoot":"","sources":["../../../../src/Patrones de Diseño/comportamiento/observer/alarma.ts"],"names":[],"mappings":";;AAEA,MAAqB,MAAM;IACvB,UAAU,CAAC,WAAmB;QAC3B,IAAG,WAAW,GAAG,EAAE,EAAC;YACnB,OAAO,CAAC,GAAG,CAAC,yCAAyC,CAAC,CAAC;SACvD;IACJ,CAAC;CAEJ;AAPD,yBAOC"}

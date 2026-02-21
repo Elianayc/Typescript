@@ -1,0 +1,1 @@
+{"version":3,"file":"productoAbstracto.js","sourceRoot":"","sources":["../../../../src/Patrones de Diseño/creacionales/practicaFactoryMethod/productoAbstracto.ts"],"names":[],"mappings":";;AAAA,MAA8B,iBAAiB;IAE3C,MAAM,CAAS;IACf,MAAM,CAAS;IAEf,YAAY,MAAc,EAAE,MAAc;QACtC,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;QACrB,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;IACzB,CAAC;CAKJ;AAbD,oCAaC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"abstractTemplate.js","sourceRoot":"","sources":["../../../../src/Patrones de Diseño/comportamiento/templateMethod/abstractTemplate.ts"],"names":[],"mappings":";;AAAA,MAA8B,SAAS;IAG3B,KAAK;QACT,IAAI,CAAC,SAAS,EAAE,CAAC;QACjB,IAAI,CAAC,GAAG,EAAE,CAAC;QACX,IAAI,CAAC,UAAU,EAAE,CAAC;IACtB,CAAC;CAKJ;AAZD,4BAYC"}

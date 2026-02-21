@@ -1,0 +1,1 @@
+{"version":3,"file":"subMenu.js","sourceRoot":"","sources":["../../../../src/Patrones de Diseño/estructural/composite/subMenu.ts"],"names":[],"mappings":";;AAEA,MAAqB,OAAO;IAEhB,MAAM,CAAS;IAEvB,YAAY,MAAc;QACtB,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;IACzB,CAAC;IAED,WAAW;QACP,OAAO,CAAC,GAAG,CAAC,YAAY,IAAI,CAAC,MAAM,EAAE,CAAC,CAAC;IAC3C,CAAC;CAEJ;AAZD,0BAYC"}

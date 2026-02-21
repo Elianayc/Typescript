@@ -24,6 +24,7 @@ function main() {
 
     v1.dni = 33457705;
     g1.controlarDocumento(v1.dni);
+
 }
 
 main()

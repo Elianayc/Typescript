@@ -1,0 +1,50 @@
+🧩 Instrucciones de Entrega
+Resolver el enunciado y subir un archivo comprimido .zip siguiendo la siguiente nomenclatura:
+
+<APELLIDO>_<DNI>.zip
+Por ejemplo: PEREZ_33444666.zip
+
+Dentro del comprimido debe incluirse:
+
+Una carpeta llamada código con solo los archivos .ts (no incluir node_modules ni otros archivos ajenos al código).
+
+Una imagen (.jpg o .png) con el diagrama de clases de la solución.
+
+Un archivo justificacion.txt explicando y justificando la solución entregada.
+
+📦 Entregables Específicos
+
+Entregable	Criterio de Evaluación
+A. Diagrama de Clases	Claridad, uso correcto de interfaces/abstracciones y composición.
+B. Código TypeScript	Correcta tipificación, estructura de objetos y comentarios.
+C. Justificación y Análisis	Identificación del patrón y justificación de la aplicación de principios S.O.L.I.D.
+
+🧠 Enunciado del Problema
+
+Una empresa está desarrollando un sistema modular para manejar y procesar documentos digitales (Document).
+Los documentos deben pasar por una fase de procesamiento, que puede ser encriptación, compresión o cualquier 
+combinación de procesos futuros.
+
+El requisito fundamental de diseño es que el método de procesamiento debe poder cambiarse o inyectarse en tiempo 
+de ejecución, permitiendo que el mismo documento sea procesado de diferentes maneras en distintos momentos.
+
+Además, la estructura principal del documento y la lógica que dispara el procesamiento no deben ser modificadas 
+cada vez que se agregue un nuevo tipo de procesamiento (por ejemplo: validación de firmas o logging).
+
+💻 Requisitos del Desarrollo (Implementación en TypeScript)
+
+Diseño Orientado a Objetos (POO): Se debe diseñar una solución que encapsule la lógica de procesamiento de forma 
+independiente.
+
+Diagrama de Clases: Presentar un diagrama de clases claro (puede ser una imagen legible) como los realizados 
+durante la cursada.
+
+Aplicación de S.O.L.I.D.: La solución debe demostrar la aplicación de al menos dos principios S.O.L.I.D., con 
+foco en DIP (Dependency Inversion Principle) y OCP (Open/Closed Principle).
+
+Patrón de Diseño: Identificar e implementar el patrón de diseño más adecuado para este escenario.
+
+Codificación: Implementar las interfaces y clases principales en TypeScript.
+
+Archivo Principal (index.ts): Comentar el archivo principal demostrando cómo se configura y ejecuta el sistema, 
+mostrando el comportamiento intercambiable en tiempo de ejecución.

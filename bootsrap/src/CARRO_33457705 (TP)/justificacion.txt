@@ -1,0 +1,24 @@
+Análisis Identificación del patrón:
+Tenemos un documento que el cliente pedirá procesar de diversas formas: podemos encriptarlo o comprimirlo por el 
+momento, pero a futuro necesitaremos poder agregas otras maneras de procesamiento.
+
+El modo de procesamiento se irá definiendo en tiempo de ejecución y puede cambiar o combinarse varios.
+
+Decido usar un patrón Strategy ya que consta de una Interface que contendrá el método "procesar" que a su
+vez tendrá distintas implementaciones según el tipo de procesamiento (encriptación, compresión, etc).
+
+Este patrón también me permitirá agregar otros procesamientos a futuro sin alterar mi código actual. 
+
+
+Justificación de la aplicación de principios S.O.L.I.D.:
+
+Se respeta el principio Abierto/Cerrado, dado que como mencioné anteriormente puedo agregar nuevas implementaciones
+a mis procesos sin romper los ya existentes ni alterar ningún código actual.
+
+Se respeta la responsabilidad única ya que cada clase se ocupará de una única tarea.
+
+También creo que se respeta el principio de Liskov dado que podemos usar cualquier clase hija como si fuera
+la clase padre. Las estrategias son intercambiables.
+
+También se respeta la inversión de dependencias, ya que los métodos de proceso dependen sol de la interface de estrategia
+y la segregación de interfacez ya que no  obliga a implementar métodos que no se usen.

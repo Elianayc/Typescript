@@ -1,0 +1,1 @@
+{"version":3,"file":"bomberos.js","sourceRoot":"","sources":["../../../../src/Patrones de Diseño/comportamiento/observer/bomberos.ts"],"names":[],"mappings":";;AAEA,MAAqB,QAAQ;IACzB,UAAU,CAAC,WAAmB;QAC1B,IAAI,WAAW,GAAG,EAAE,EAAE;YAClB,OAAO,CAAC,GAAG,CAAC,iEAAiE,CAAC,CAAC;SAClF;IACL,CAAC;CACJ;AAND,2BAMC"}
