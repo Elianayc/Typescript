@@ -1,0 +1,34 @@
+classDiagram
+    class Dron {
+        - _velocidadBase: number
+        - _alturaBase: number
+        - _capacidadMax: number
+        - _herramienta?: Herramienta
+        + constructor(velocidadBase: number, alturaBase: number, capacidadMax: number, herramienta?: Herramienta)
+        + calcularVelocidad(): number
+        + calcularAltura(): number
+        + asignarHerramienta(herramienta: Herramienta): void
+    }
+
+    class Herramienta {
+        <<abstract>>
+        + peso: number
+        + constructor(peso: number)
+    }
+
+    class SensorInfrarrojo {
+        + constructor()
+    }
+
+    class Taser {
+        + constructor()
+    }
+
+    class BrazoRobotico {
+        + constructor()
+    }
+
+    Dron o-- Herramienta : herramienta
+    Herramienta <|-- SensorInfrarrojo
+    Herramienta <|-- Taser
+    Herramienta <|-- BrazoRobotico

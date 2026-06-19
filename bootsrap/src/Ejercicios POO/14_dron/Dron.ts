@@ -2,10 +2,10 @@ import { Herramienta } from "./Herramienta";
 
 export class Dron {
 
-    _velocidadBase: number = 5;
-    _alturaBase: number = 100;
-    _capacidadMax: number = 200;
-    _herramienta?: Herramienta;
+    private _velocidadBase: number = 5;
+    private _alturaBase: number = 100;
+    private _capacidadMax: number = 200;
+    private _herramienta?: Herramienta;
 
     constructor(
         velocidadBase: number,
