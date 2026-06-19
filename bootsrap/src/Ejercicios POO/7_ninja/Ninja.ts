@@ -28,10 +28,14 @@ export class Ninja{
     get salto(): number{return this._salto;}
 
     public saltar(m: number){
-        console.log(`${this._salto*m}`)
+        // Muestra la distancia que el ninja puede saltar, 
+        // que se calcula multiplicando su capacidad de salto 
+        // por el número de metros que se le indique como argumento.
+        console.log(`${this._salto * m}`)
     }
 
     public ataque(){
+        // Muestra el arma y el arte marcial del ninja.
         console.log(`${this._arma} - ${this._arteMarcial}`)
     }
 

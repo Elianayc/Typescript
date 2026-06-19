@@ -1,31 +1,54 @@
 import { SistemaTraccion } from "./SistemaTraccion";
 
-export class Robot{
+export class Robot {
 
-    private _numSerie: number;
+    private _numSerie: string;
     private _potenciaBase: number;
     private _sistemaTraccion: SistemaTraccion;
 
-    constructor(ns: number, pb: number, st: SistemaTraccion){
-        this._numSerie = ns;
-        this._potenciaBase = pb;
-        this._sistemaTraccion = st;
+    constructor(
+        numeroSerie: string,
+        potenciaBase: number,
+        sistemaTraccion: SistemaTraccion
+    ) {
+        this._numSerie = numeroSerie;
+        this._potenciaBase = potenciaBase;
+        this._sistemaTraccion = sistemaTraccion;
     }
 
-    set numSerie(ns: number){this._numSerie=ns;}
-    set potenciaBase(pb: number){this._potenciaBase=pb;}
-    set sistemaTraccion(st: SistemaTraccion){this._sistemaTraccion=st;}
+    public set numSerie(numeroSerie: string) {
+        this._numSerie = numeroSerie;
+    }
 
-    get numSerie(): number{return this._numSerie;}
-    get potenciaBase(): number{return this._potenciaBase;}
-    get sistemaTraccion(): SistemaTraccion{return this._sistemaTraccion;}
+    public set potenciaBase(potenciaBase: number) {
+        this._potenciaBase = potenciaBase;
+    }
 
-    public mostrarDatos(): void{
-        console.log(`\n 
-            Número de serie: ${this._numSerie} \n 
-            Potencia de tracción final: ${this._potenciaBase} \n
-            Tipo de tracción: ${this._sistemaTraccion} \n
-            Puede avanzar: ${this._sistemaTraccion} \n`);
+    public set sistemaTraccion(sistemaTraccion: SistemaTraccion) {
+        this._sistemaTraccion = sistemaTraccion;
+    }
+
+    public get numSerie(): string {
+        return this._numSerie;
+    }
+
+    public get potenciaBase(): number {
+        return this._potenciaBase;
+    }
+
+    public get sistemaTraccion(): SistemaTraccion {
+        return this._sistemaTraccion;
+    }
+
+    public mostrarDatos(): void {
+        console.log(`
+            Número de serie: ${this._numSerie}
+            Potencia base: ${this._potenciaBase} hp
+            Tipo de tracción: ${this._sistemaTraccion.tipo}
+            Potencia final: ${this._potenciaBase - this._sistemaTraccion.reduccionHP} hp
+            Distancia máxima: ${this._sistemaTraccion.distanciaMax} km
+            ${this._sistemaTraccion.obtenerCaracteristicas()}
+        `);
     }
 
 }

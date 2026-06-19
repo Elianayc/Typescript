@@ -1,7 +1,16 @@
 import { SistemaTraccion } from "./SistemaTraccion";
 
-class RuedaCaucho extends SistemaTraccion{
+export class RuedaCaucho extends SistemaTraccion {
 
-    
+    constructor() {
+        super(
+            "Rueda de caucho",
+            1,
+            100
+        );
+    }
 
+    public obtenerCaracteristicas(): string {
+        return "Cuando se gasta debe reemplazarse.";
+    }
 }

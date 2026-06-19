@@ -3,11 +3,12 @@ import { Persona } from "./Persona";
 
 export class Guardia extends Persona {
 
-    public override presentarse(): void{
-        console.log(`Hola, mi nombre es: ${this.nombre} ${this.apellido} y soy el Guardia.`);
+    public override presentarse(): void {
+        super.presentarse();
+        console.log("Soy el guardia.");
     }
 
-    public controlarDocumento(d: number){
-        console.log(`Adelante, persona con DNI: ${d}.`);
+    public controlarDocumento(dni: number): void {
+        console.log(`Adelante, persona con DNI: ${dni}.`);
     }
 }
