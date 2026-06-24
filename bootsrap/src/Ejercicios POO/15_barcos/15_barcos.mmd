@@ -1,6 +1,16 @@
-%%{init: { 'theme': 'dark', 'themeVariables': { 'background': '#121212', 'lineColor': '#a5d7f7', 'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 'fontSize': '14px' } } }%%
+%%{init: { 
+    'theme': 'dark', 
+    'themeVariables': { 
+                        'background': '#121212', 
+                        'lineColor': '#a5d7f7', 
+                        'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 
+                        'fontSize': '14px' 
+        }, 
+        'themeCSS': 'path { stroke-width: 1.5px !important; }' 
+    } }%%
 
 classDiagram
+
 class Nivel {
     <<enumeration>>
     Baja
@@ -11,12 +21,14 @@ class Nivel {
     Extrema
     Afectada
 }
+
 class Barco {
     <<abstract>>
     - nombre: string
     - flotabilidad: Nivel
     - estabilidad: Nivel
 }
+
 class BarcoDeGuerra {
     <<abstract>>
     - solidez: Nivel
@@ -30,12 +42,12 @@ class Destructor {
     - maniobrabilidad: Nivel
 }
 class BarcoHospital {
-    - capacidadPacientes: int
+    - capacidadPacientes: number
 }
 class LanchaMedica {
     - motor: string
     - maniobrabilidad: Nivel
-    - capacidadGruaKg: int
+    - capacidadGruaKg: number
 }
 Barco <|-- BarcoDeGuerra
 Barco <|-- BarcoHospital
@@ -44,4 +56,4 @@ BarcoDeGuerra <|-- Acorazado
 BarcoDeGuerra <|-- Destructor
 
 %%Colores de las clases
-classDef default fill:#362b2b,stroke:#f39bce,stroke-width:1px,color:#e4dcd2
+classDef default fill:#362b2b,stroke:#f39bce,color:#e4dcd2
