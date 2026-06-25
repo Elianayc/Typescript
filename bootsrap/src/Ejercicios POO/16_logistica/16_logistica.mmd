@@ -1,0 +1,100 @@
+%%{init: { 
+    'theme': 'dark', 
+    'themeVariables': { 
+                        'background': '#121212', 
+                        'lineColor': '#a5d7f7', 
+                        'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 
+                        'fontSize': '14px' 
+        }, 
+        'themeCSS': 'path { stroke-width: 1.5px !important; }' 
+    } }%%
+
+classDiagram
+
+class TipoTV {
+    <<enumeration>>
+    LED
+    LCD
+}
+
+class Vehiculo {
+    <<abstract>>
+    - listaCarga:List<Elemento>
+    - capacidadMax:number
+    + cargar(elemento:Elemento)void*
+    + listarElementos()void
+}
+
+class Auto {
+    + cargar(elemento:Elemento)void
+}
+
+class Camioneta {
+    + cargar(elemento:Elemento)void
+}
+
+class Elemento {
+    <<abstract>>
+    - id:number
+    - descripcion:string
+    - ancho:number
+    - alto:number
+    + toString()string*
+}
+
+class Caja {
+    + toString()string
+}
+
+class Electrodomestico {
+    <<abstract>>
+    - voltaje:number
+}
+
+class Comoda {
+    - superficie:number
+    - cantidadCajones:number
+    + toString()string
+}
+
+class Heladera {
+    - tieneFreezer:boolean
+    + toString()string
+}
+
+class Lavarropas {
+    - carga:number
+    - revolucionesCentrifugado:number
+    + toString()string
+}
+
+class Televisor {
+    - tipo:TipoTV
+    - esInteligente:boolean
+    + toString()string
+}
+
+class Bicicleta {
+    - tamañoRodado:number
+    - esElectrica:boolean
+    - cantidadCambios:number
+    + toString()string
+}
+
+Vehiculo <|-- Auto
+Vehiculo <|-- Camioneta
+
+Elemento <|-- Comoda
+Elemento <|-- Bicicleta
+Elemento <|-- Caja
+Elemento <|-- Electrodomestico
+
+Electrodomestico <|-- Heladera
+Electrodomestico <|-- Lavarropas
+Electrodomestico <|-- Televisor
+
+%%Relación de Agregación
+Vehiculo "1" o-- "*" Elemento
+
+%%Colores de las clases
+classDef default fill:#362b2b,stroke:#f39bce,color:#e4dcd2
