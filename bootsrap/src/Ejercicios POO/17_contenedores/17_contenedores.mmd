@@ -1,0 +1,54 @@
+%%{init: { 
+    'theme': 'dark', 
+    'themeVariables': { 
+                        'background': '#121212', 
+                        'lineColor': '#a5d7f7', 
+                        'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 
+                        'fontSize': '14px' 
+        }, 
+        'themeCSS': 'path { stroke-width: 1.5px !important; }' 
+    } }%%
+
+classDiagram
+
+class Material {
+    <<enumeration>>
+    metal
+    cuero
+    madera
+    vidrio
+    plástico
+    líquido
+    textil
+    goma
+    otro
+}
+
+class Estado {
+    <<enumeration>>
+    simple
+    contenedor
+    contenido
+    ambos
+}
+
+class Objeto{
+ 
+    - material: Material
+    - volumen: numeric
+    - listaContenido: Objeto[]
+    - contenedor: Objeto
+    - estado: Estado
+
+    + agregarObjeto(Objeto)
+    + removerObjeto(Objeto)
+    + calcularEstado()Estado
+    + toString()string
+
+}
+
+%%Relación de Agregación
+Objeto "1" o-- "0..*" Objeto
+
+%%Colores de las clases
+classDef default fill:#362b2b,stroke:#f39bce,color:#e4dcd2
