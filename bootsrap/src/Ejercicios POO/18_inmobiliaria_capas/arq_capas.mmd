@@ -1,0 +1,25 @@
+%%{init: { 
+    'theme': 'dark', 
+    'themeVariables': { 
+                        'background': '#121212', 
+                        'lineColor': '#a5d7f7', 
+                        'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 
+                        'fontSize': '14px' 
+        }, 
+        'themeCSS': 'path { stroke-width: 1.5px !important; }' 
+    } }%%
+
+flowchart TD
+
+A[Presentation<br/>index.ts] --> B[Business<br/>InmobiliariaService]
+B --> C[Data<br/>InmuebleRepository]
+
+C --> D[Model<br/>Inmueble]
+C --> D2[Casa]
+C --> D3[Departamento]
+C --> D4[Contacto]
+C --> D5[Direccion]
+C --> D6[Ambiente]
+
+%%Colores de las cajitas
+classDef default fill:#362b2b,stroke:#f39bce,color:#e4dcd2
