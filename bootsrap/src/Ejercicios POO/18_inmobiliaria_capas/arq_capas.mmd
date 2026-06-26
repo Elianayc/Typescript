@@ -1,25 +1,58 @@
 %%{init: { 
     'theme': 'dark', 
     'themeVariables': { 
-                        'background': '#121212', 
-                        'lineColor': '#a5d7f7', 
-                        'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 
-                        'fontSize': '14px' 
-        }, 
-        'themeCSS': 'path { stroke-width: 1.5px !important; }' 
-    } }%%
+        'background': '#121212', 
+        'lineColor': '#a5d7f7', 
+        'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 
+        'fontSize': '14px' 
+    }
+} }%%
 
 flowchart TD
 
-A[Presentation<br/>index.ts] --> B[Business<br/>InmobiliariaService]
-B --> C[Data<br/>InmuebleRepository]
+%% PRESENTATION
+subgraph P[Presentation Layer]
+    Index[Index / main.ts]
+end
 
-C --> D[Model<br/>Inmueble]
-C --> D2[Casa]
-C --> D3[Departamento]
-C --> D4[Contacto]
-C --> D5[Direccion]
-C --> D6[Ambiente]
 
-%%Colores de las cajitas
+%% BUSINESS
+subgraph B[Business Layer]
+    Service[InmobiliariaService]
+end
+
+%% DATA
+subgraph D[Data Layer]
+    Repo[InmuebleRepository]
+end
+
+%% DOMAIN
+subgraph M[Domain Model]
+    Inmueble
+    Casa
+    Departamento
+    Direccion
+    Contacto
+    Ambiente
+end
+
+%% FLUJO
+Index --> Service
+Service --> Repo
+
+Repo --> Inmueble
+Service --> Inmueble
+
+Casa --> Inmueble
+Departamento --> Inmueble
+Inmueble --> Direccion
+Inmueble --> Contacto
+Inmueble --> Ambiente
+
+%% ESTILO
+style P fill:#362b2b,stroke:#a5d7f7,color:#e4dcd2
+style B fill:#2b2b36,stroke:#f39bce,color:#e4dcd2
+style D fill:#3a2b3a,stroke:#d0a6ff,color:#e4dcd2
+style M fill:#1a1a1a,stroke:#a5d7f7,color:#ffffff
+
 classDef default fill:#362b2b,stroke:#f39bce,color:#e4dcd2

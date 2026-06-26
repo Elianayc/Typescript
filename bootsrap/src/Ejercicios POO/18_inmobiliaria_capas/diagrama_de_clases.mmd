@@ -1,13 +1,13 @@
 %%{init: { 
     'theme': 'dark', 
     'themeVariables': { 
-                        'background': '#121212', 
-                        'lineColor': '#a5d7f7', 
-                        'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 
-                        'fontSize': '14px' 
-        }, 
-        'themeCSS': 'path { stroke-width: 1.5px !important; }' 
-    } }%%
+        'background': '#121212', 
+        'lineColor': '#a5d7f7', 
+        'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 
+        'fontSize': '14px' 
+    },
+    'themeCSS': 'path { stroke-width: 1.5px !important; }'
+} }%%
 
 classDiagram
 
@@ -63,5 +63,4 @@ Inmueble "1" --> "1" Direccion
 Inmueble "1" --> "*" Ambiente
 Inmueble "1" --> "1" Contacto
 
-%%Colores de las clases
 classDef default fill:#362b2b,stroke:#f39bce,color:#e4dcd2
