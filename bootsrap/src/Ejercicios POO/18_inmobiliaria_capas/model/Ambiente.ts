@@ -1,5 +1,5 @@
 
-export abstract class Ambiente {
+export class Ambiente {
 
     private _tipo: string;
     private _ancho: number;
@@ -26,6 +26,5 @@ export abstract class Ambiente {
     public calcularM2(): number{
         return this._largo * this._ancho;
     }
-
 
 }

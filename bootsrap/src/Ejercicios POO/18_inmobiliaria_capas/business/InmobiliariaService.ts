@@ -1,4 +1,3 @@
-
 import { InmuebleRepository } from "../data/InmuebleRepository";
 import { Inmueble } from "../model/Inmueble";
 import { Casa } from "../model/Casa";
@@ -9,67 +8,160 @@ import { Ambiente } from "../model/Ambiente";
 
 export class InmobiliariaService {
 
-    private _repositorio: InmuebleRepository
+    private _repositorio: InmuebleRepository;
 
-    constructor(
-        repositorio: InmuebleRepository
-    ) {
-        this._repositorio = repositorio;}
+    constructor(repositorio: InmuebleRepository) {
+        this._repositorio = repositorio;
+    }
 
-    public darDeAltaInmueble(
-        tipo: "casa" | "departamento",
-        direccion: Direccion,
-        ambientes: Ambiente[],
-        contacto: Contacto,
-        observaciones: string,
-        tieneGas: boolean,
-        tieneCloaca: boolean,
-        extras: any
-    ):void {
+    public altaDireccion(
 
-        if (!direccion || !ambientes || ambientes.length === 0 || !contacto) 
-        {
-            throw new Error("Faltan datos obligatorios");
+        provincia: string,
+        barrio: string,
+        calle: string,
+        altura: number,
+        codigoPostal: string,
+        esBarrioPrivado: boolean
+
+    ): Direccion {
+
+        if (
+            !provincia ||
+            !barrio ||
+            !calle ||
+            altura <= 0 ||
+            !codigoPostal
+        ) {
+            throw new Error("Dirección inválida");
         }
 
-        if (!contacto.nombre || !contacto.apellido || (!contacto.telefono && !contacto.email)) 
-        {
+        return new Direccion(
+
+            provincia,
+            barrio,
+            calle,
+            altura,
+            codigoPostal,
+            esBarrioPrivado
+
+        );
+    }
+
+    public altaContacto(
+
+        nombre: string,
+        apellido: string,
+        telefono: string,
+        email: string
+
+    ): Contacto {
+
+        if (
+            !nombre ||
+            !apellido ||
+            (!telefono && !email)
+        ) {
             throw new Error("Contacto inválido");
         }
 
-        let inmueble: Inmueble;
+        return new Contacto(
 
-        if (tipo === "casa") {
-            inmueble = new Casa(
-                direccion,
-                ambientes,
-                contacto,
-                tieneGas,
-                tieneCloaca,
-                observaciones,
-                extras.tieneQuincho,
-                extras.tienePileta
-            );
-        } else {
-            inmueble = new Departamento(
-                direccion,
-                ambientes,
-                contacto,
-                tieneGas,
-                tieneCloaca,
-                observaciones,
-                extras.piso,
-                extras.letra,
-                extras.admiteMascota
-            );
+            nombre,
+            apellido,
+            telefono,
+            email
+
+        );
+    }
+
+    public altaAmbiente(
+
+        tipo: string,
+        ancho: number,
+        largo: number,
+        esLuminoso: boolean
+
+    ): Ambiente {
+
+        if (
+            !tipo ||
+            ancho <= 0 ||
+            largo <= 0
+        ) {
+            throw new Error("Ambiente inválido");
         }
 
-        this._repositorio.agregar(inmueble);
+        return new Ambiente(
+            tipo,
+            ancho,
+            largo,
+            esLuminoso
+        );
+    }
+
+    public altaCasa(
+
+        direccion: Direccion,
+        ambientes: Ambiente[],
+        contacto: Contacto,
+        tieneGas: boolean,
+        tieneCloaca: boolean,
+        observaciones: string,
+        tieneQuincho: boolean,
+        tienePileta: boolean
+
+    ): void {
+
+        const casa = new Casa(
+
+            direccion,
+            ambientes,
+            contacto,
+            tieneGas,
+            tieneCloaca,
+            observaciones,
+            tieneQuincho,
+            tienePileta
+
+        );
+
+        this._repositorio.agregar(casa);
+    }
+
+    public altaDepartamento(
+
+        direccion: Direccion,
+        ambientes: Ambiente[],
+        contacto: Contacto,
+        tieneGas: boolean,
+        tieneCloaca: boolean,
+        observaciones: string,
+        piso: number,
+        letra: string,
+        admiteMascota: boolean
+
+    ): void {
+
+        const departamento = new Departamento(
+
+            direccion,
+            ambientes,
+            contacto,
+            tieneGas,
+            tieneCloaca,
+            observaciones,
+            piso,
+            letra,
+            admiteMascota
+
+        );
+
+        this._repositorio.agregar(departamento);
     }
 
 
     public listarInmuebles(): Inmueble[] {
         return this._repositorio.listar();
     }
-
+    
 }

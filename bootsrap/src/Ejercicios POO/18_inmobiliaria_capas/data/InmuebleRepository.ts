@@ -7,7 +7,7 @@ export class InmuebleRepository {
 
     // No necesito constructor.
 
-    public agregar (inmueble: Inmueble): void{
+    public agregar(inmueble: Inmueble): void{
         this._listaInmuebles.push(inmueble);
     }
 
