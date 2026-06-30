@@ -13,7 +13,7 @@ export abstract class Vehiculo {
 
     public listarElementos(): void {
         this._listaCarga.forEach(elemento => {
-            console.log(elemento.toString());
+                console.log(elemento.toString());
             }
         );
     }

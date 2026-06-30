@@ -1,0 +1,46 @@
+%%{init: { 
+    'theme': 'dark', 
+    'themeVariables': { 
+        'background': '#121212', 
+        'lineColor': '#a5d7f7', 
+        'fontFamily': 'Cascadia Code, Fira Code, Consolas, Courier New, monospace', 
+        'fontSize': '14px' 
+    }
+} }%%
+
+flowchart TD
+
+%% PRESENTATION
+subgraph P[Presentation Layer]
+    Index[Index / main.ts]
+end
+
+%% BUSINESS
+subgraph B[Business Layer]
+    BancoService[BancoService]
+end
+
+%% DOMAIN
+subgraph D[Domain Model]
+    Person[Person]
+end
+
+%% INFRA / EXTERNAL
+subgraph I[External Service]
+    PersonIdentity[PersonIdentity API]
+end
+
+%% FLUJO
+Index --> BancoService
+BancoService --> PersonIdentity
+PersonIdentity --> Person
+BancoService --> Person
+
+%% ESTILO
+style P fill:#243a45,stroke:#a5d7f7,color:#e4dcd2
+style B fill:#3a2430,stroke:#f39bce,color:#e4dcd2
+style D fill:#2f3a28,stroke:#d0a6ff,color:#e4dcd2
+style I fill:#2a2a2a,stroke:#aaaaaa,color:#ffffff
+
+classDef default fill:#362b2b,stroke:#f39bce,color:#e4dcd2
+
