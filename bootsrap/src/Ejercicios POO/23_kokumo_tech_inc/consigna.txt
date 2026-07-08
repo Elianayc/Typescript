@@ -1,58 +1,78 @@
-23. La empresa tecnológica Kokumo Tech Inc se lanza al mercado de la 
-seguridad mediante la oferta de un sistema integral de vigilancia capaz
-de cubrir aire y tierra; la solución apunta a barrios privados, 
-estancias y regiones de decenas de hectáreas.
+23. Sistema Integral de Vigilancia
 
-KTI necesita conciliar los datos de los distintos dispositivos para 
-poder brindar una solución homogénea, de modo tal que se debe pensar 
-en una pieza de software sabiendo que:
+La empresa tecnológica Kokumo Tech Inc. (KTI) desarrolla un sistema 
+integral de vigilancia capaz de monitorear tanto aire como tierra, 
+destinado a barrios privados, estancias y grandes extensiones de terreno.
 
-a. Gr0N3: se trata del dispositivo volador que capta objetos 
-clasificables en grande, pequeños o medianos, y es capaz de reconocer 
-si se trata de un humano o un animal.
+Para ofrecer una solución unificada, KTI necesita integrar la información
+proveniente de distintos dispositivos, cuyos formatos de datos son 
+diferentes.
 
-Para obtener los datos del drone, debe ejecutarse el método estático 
-getData() de la clase FlyingGr0n3, pasándole por parámetro el número 
-de id (rango del 1 al 10). Si no existe el id del dispositivo, el 
-método lanza una excepción; en caso contrario devuelve una lista 
-(que puede estar vacía) de Gr0n3Object, que presenta los siguientes 
-atributos:
+a. Gr0N3
+Gr0N3 es un dispositivo aéreo (drone) capaz de detectar objetos y 
+clasificarlos según su tamaño (grande, mediano o pequeño). 
 
-- size (string): admite los valores big, small, medium.
-- type (string): admite los valores human, animal.
-- kind (string): si se trata de un animal, los valores posibles son 
-dog, cat, cow, sheep, horse, undefined.
+Además, puede determinar si el objeto detectado corresponde a un humano
+o a un animal.
 
-b. FalderPerr177: se trata de la unidad terrestre que sólo distingue 
-entre humanos y no humanos, con la capacidad de identificar el género
-biológico de los primeros.
+Los datos de un drone se obtienen invocando el método estático 
+getData(id) de la clase FlyingGr0n3, donde id representa el identificador
+del dispositivo (valores del 1 al 10).
 
-Mediante la instancia de la clase FalderP, es posible recuperar los 
-datos si se invoca getData(); la función devuelve una lista que 
-contiene a todas las unidades activas y que se modelan a través de 
-la clase Perr177, cuyos atributos son:
+- Si el identificador no existe, el método lanza una excepción.
+- Si el identificador es válido, devuelve una lista (que puede estar 
+vacía) de objetos de tipo Gr0n3Object.
 
-- id (entero): un id numérico
-- List<Perr177Data>: es una lista que contiene elementos del tipo 
-Perr177Data, que presenta los siguientes atributos:
+Cada Gr0n3Object posee los siguientes atributos:
+- size (string): valores posibles big, medium, small.
+- type (string): valores posibles human, animal.
+- kind (string): si type es animal, los valores posibles son dog, 
+cat, cow, sheep, horse o undefined.
 
-        - type (string): admite los valores HUMAN, NO_HUMAN, de un 
-        enum llamado FPType.
-        - size (string): admite los valores rande, pichitito, 
-        niranipi.
-        - gender (string): admite los valores MALE, FEMALE, de un 
-        enum llamado FPGender.
+------------------------------------------------------------
 
-La idea es poder implementar una clase que contenga la función 
-fetchSurveillanceData() encargada de recuperar los datos de los 
-distintos dispositivos para, luego, transformarlos en un formato 
-homogéneo de modo tal que sea posible pasárselo a la función 
-printInfo(), buscando de esta manera imprimir la siguiente información
-por cada objeto:
+b. FalderPerr177
 
-        Dispositivo: <id dispositivo>
-        Tipo: <Humano, No humano>
-        Tamaño: <Grande, mediano, pequeño>
-        Observaciones: <los valores de kind o de gender, dependiendo el 
-        dispositivo>
+FalderPerr177 es un dispositivo terrestre que distingue entre humanos 
+y no humanos y, además, es capaz de identificar el género biológico de 
+las personas.
 
+Los datos se obtienen mediante una instancia de la clase FalderP, 
+invocando el método getData().
+
+Este método devuelve una lista que contiene todas las unidades 
+terrestres activas, representadas mediante objetos de la clase Perr177.
+
+Cada objeto Perr177 posee:
+
+- id (number): identificador numérico del dispositivo.
+- data (List<Perr177Data>): lista de detecciones realizadas por ese 
+dispositivo.
+
+Cada objeto Perr177Data posee los siguientes atributos:
+
+- type (string): valores HUMAN o NO_HUMAN, representados mediante 
+el enum FPType.
+- size (string): valores posibles rande, pichitito, niranipi.
+- gender (string): valores MALE o FEMALE, representados mediante el 
+enum FPGender.
+
+------------------------------------------------------------
+
+Objetivo
+
+Implementar una clase que contenga la función fetchSurveillanceData().
+
+Esta función deberá:
+
+1. Obtener los datos de ambos sistemas de vigilancia.
+2. Transformar la información a un formato homogéneo.
+3. Devolver el resultado para que pueda ser procesado por la función 
+printInfo().
+
+La salida deberá mostrar, para cada detección, la siguiente información:
+
+Dispositivo: <id del dispositivo>
+Tipo: <Humano | No humano>
+Tamaño: <Grande | Mediano | Pequeño>
+Observaciones: <kind o gender, según corresponda>
